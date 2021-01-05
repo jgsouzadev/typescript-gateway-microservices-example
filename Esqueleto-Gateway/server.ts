@@ -1,14 +1,14 @@
-import express, { Request, Response} from "express";
+import express, {  Request, Response} from "express";
 
-import router from './routers/index';
+const router = express.Router();
 
-console.log(router) // 1
+const exampleRouter = require('./routers/Example')
+const secondaryRouter = require('./routers/Example_2')
 
 const server = express();
-
-// router.get('/products', (req, res, next) => productsServiceProxy(req, res, next));
-
-server.use('/', router);
+const ACTUAL_API_PATH = '/v1'
+server.use(ACTUAL_API_PATH+'/example', exampleRouter);
+server.use(ACTUAL_API_PATH + '/secapi', secondaryRouter);
 
 export default server;
 
