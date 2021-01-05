@@ -1,5 +1,3 @@
-# typescript-gateway-microservices-example
-
 # Esqueleto de Aplicação Microservices com API Gateway
 
 
